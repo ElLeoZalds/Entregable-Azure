@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Azure AI Services</title>
+    <link rel="stylesheet" href="./css/estilos.css">
+    <style>
+        /* Estilos específicos para la presentación dinámica */
+        .bienvenida {
+            background: #fff;
+            padding: 30px;
+            border-radius: var(--border-radius);
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+            margin-bottom: 30px;
+        }
+        .bienvenida p {
+            color: #64748b;
+            font-size: 1.1rem;
+            line-height: 1.6;
+        }
+        .grid-proyectos {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+        .card-proyecto {
+            background: #fff;
+            padding: 25px;
+            border-radius: var(--border-radius);
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+            border-top: 4px solid #cbd5e1;
+            transition: var(--transition);
+            text-decoration: none;
+            color: inherit;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        .card-proyecto:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+        }
+        .card-proyecto.extraccion { border-top-color: #0078d4; }
+        .card-proyecto.sentimientos { border-top-color: #10b981; }
+        .card-proyecto.imagen { border-top-color: #8b5cf6; }
+
+        .card-proyecto h3 {
+            margin-top: 0;
+            margin-bottom: 10px;
+            font-size: 1.25rem;
+        }
+        .card-proyecto p {
+            color: #64748b;
+            font-size: 0.9rem;
+            line-height: 1.5;
+            margin-bottom: 20px;
+        }
+        .link-accion {
+            font-weight: 600;
+            font-size: 0.9rem;
+            color: var(--accent-color);
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="contenido-pagina">
+        <div class="bienvenida">
+            <h1>Bienvenido a Azure AI Services Workspace</h1>
+            <p>Esta interfaz unificada te permite interactuar y probar diversas capacidades de Inteligencia Artificial utilizando Cognitive Services de Azure. Selecciona un proyecto desde el menú lateral o utiliza los accesos directos de abajo para comenzar a procesar tus datos.</p>
+        </div>
+
+        <h2>Servicios Disponibles</h2>
+        
+        <div class="grid-proyectos">
+            <a href="extraccion.html" class="card-proyecto extraccion">
+                <div>
+                    <h3>Extracción de Entidades</h3>
+                    <p>Identifica y clasifica elementos clave en textos como fechas, organizaciones, ubicaciones, personas y cantidades usando AI Language.</p>
+                </div>
+                <span class="link-accion">Ir al módulo →</span>
+            </a>
+
+            <a href="sentimientos.html" class="card-proyecto sentimientos">
+                <div>
+                    <h3>Análisis de Sentimientos</h3>
+                    <p>Analiza fragmentos de texto para determinar tonos emocionales, detectando sentimientos positivos, negativos o neutros de forma automática.</p>
+                </div>
+                <span class="link-accion">Ir al módulo →</span>
+            </a>
+
+            <a href="imagen.html" class="card-proyecto imagen">
+                <div>
+                    <h3>Análisis de Imagen</h3>
+                    <p>Procesa imágenes mediante visión artificial para extraer descripciones textuales, etiquetas de objetos y metadatos visuales clave.</p>
+                </div>
+                <span class="link-accion">Ir al módulo →</span>
+            </a>
+        </div>
+    </div>
+
+    <script src="./js/componentes.js"></script>
+</body>
+</html>

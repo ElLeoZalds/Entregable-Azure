@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Análisis de Imagen - Azure AI</title>
+    <link rel="stylesheet" href="./css/estilos.css">
+</head>
+<body>
+
+    <div class="contenido-pagina">
+        <h1>Módulo: Análisis de Imagen</h1>
+
+        <div class="contenedor-principal">
+            <div class="columna-izquierda" style="flex: 1;"> <label for="urlUsuario">Pega la URL de la imagen a analizar:</label><br><br>
+                <input type="text" id="urlUsuario" value="https://static.vecteezy.com/system/resources/thumbnails/079/131/527/small/thinking-woman-and-relax-with-coffee-at-house-for-peace-daydreaming-and-calm-morning-smile-female-person-and-caffeine-beverage-with-reflection-nostalgia-memory-and-perspective-for-weekend-break-photo.jpg">
+            </div>
+        </div>
+
+        <div class="seccion-boton">
+            <button id="btnEnviar">Analizar Imagen</button>
+        </div>
+
+        <h3>Resultado de la IA</h3>
+        <pre id="resultado">Esperando imagen...</pre>
+    </div>
+
+    <script src="./js/componentes.js"></script>
+    <script src="./js/imagen.js"></script>
+</body>
+</html>
