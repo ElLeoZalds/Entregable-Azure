@@ -7,10 +7,13 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.get('/api/config', (req, res) => {
     res.json({
+        languageKey: process.env.AZURE_LANGUAGE_KEY,
+        languageEndpoint: process.env.AZURE_LANGUAGE_ENDPOINT,
         visionKey: process.env.AZURE_VISION_KEY,
         visionEndpoint: process.env.AZURE_VISION_ENDPOINT,
-        languageKey: process.env.AZURE_LANGUAGE_KEY,
-        languageEndpoint: process.env.AZURE_LANGUAGE_ENDPOINT
+        openAiKey: process.env.AZURE_OPENAI_KEY,
+        openAiEndpoint: process.env.AZURE_OPENAI_ENDPOINT,
+        openAiDeployment: process.env.AZURE_OPENAI_DEPLOYMENT_NAME,
     });
 });
 
