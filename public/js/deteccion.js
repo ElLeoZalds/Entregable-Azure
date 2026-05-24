@@ -2,7 +2,7 @@ const urlUsuario = document.getElementById('urlUsuario');
 const imgPreview = document.getElementById('imgPreview');
 
 urlUsuario.addEventListener('input', () => {
-    imgPreview.src = urlUsuario.value.trim() || 'https://static.vecteezy.com/system/resources/thumbnails/079/131/527/small/thinking-woman-and-relax-with-coffee-at-house-for-peace-daydreaming-and-calm-morning-smile-female-person-and-caffeine-beverage-with-reflection-nostalgia-memory-and-perspective-for-weekend-break-photo.jpg';
+    imgPreview.src = urlUsuario.value.trim() || 'https://static.vecteezy.com/system/resources/previews/035/846/121/non_2x/man-job-entrepreneur-sitting-work-manager-office-modern-person-adult-smart-computer-desk-portrait-photo.jpg';
 });
 
 document.getElementById('btnEnviar').addEventListener('click', async () => {
@@ -15,7 +15,7 @@ document.getElementById('btnEnviar').addEventListener('click', async () => {
     }
 
     try {
-        contenedor.textContent = "Analizando imagen...";
+        contenedor.textContent = "Detectando objetos...";
 
         const configRes = await fetch('/api/config');
         if (!configRes.ok) throw new Error("No se pudo obtener la configuración del servidor.");
@@ -23,7 +23,7 @@ document.getElementById('btnEnviar').addEventListener('click', async () => {
 
         const endpoint = config.visionEndpoint;
         const suscriptionKey = config.visionKey;
-        const url = `${endpoint}/vision/v3.2/analyze?visualFeatures=Categories,Description,Color`;
+        const url = `${endpoint}/vision/v3.2/analyze?visualFeatures=Objects`;
 
         const response = await fetch(url, {
             method: "POST",
@@ -40,16 +40,24 @@ document.getElementById('btnEnviar').addEventListener('click', async () => {
         }
 
         const data = await response.json();
-        const confianza = (data.description.captions[0].confidence * 100).toFixed(2);
+        
+        if (!data.objects || data.objects.length === 0) {
+            contenedor.innerHTML = "<p>No se detectaron objetos en esta imagen.</p>";
+            return;
+        }
 
-        let resultadoHTML = "";
-        resultadoHTML += `Descripción: ${data.description.captions[0].text}\n`;
-        resultadoHTML += `Etiquetas: ${data.description.tags.join(", ")}\n`;
-        resultadoHTML += `Confianza: ${confianza} %`;
-
-        contenedor.textContent = resultadoHTML;
+        let resultadoHTML = "<h3>Objetos Detectados:</h3><ul>";
+        
+        data.objects.forEach(obj => {
+            const confidence = (obj.confidence * 100).toFixed(2);
+            const rect = obj.rectangle;
+            resultadoHTML += `<li><strong>${obj.object}</strong> — Confianza: ${confidence}%<br><small style="color: #666;">Ubicación: Inicio (${rect.x}px, ${rect.y}px) | Dimensiones: ${rect.w}x ancho por ${rect.h}y alto</small></li>`;
+        });
+        
+        resultadoHTML += "</ul>";
+        contenedor.innerHTML = resultadoHTML;
 
     } catch (error) {
-        contenedor.textContent = `Error analizando imagen: ${error.message}`;
+        contenedor.textContent = `Error: ${error.message}`;
     }
 });

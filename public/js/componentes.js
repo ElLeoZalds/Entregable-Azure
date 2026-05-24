@@ -14,6 +14,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 <li><a href="sentimientos.html" id="nav-sentimientos">Análisis de Sentimientos</a></li>
                 <li><a href="imagen.html" id="nav-imagen">Análisis de Imagen</a></li>
                 <li><a href="chatgpt.html" id="nav-chatgpt">Chatgpt</a></li>
+                <li><a href="deteccion.html" id="nav-deteccion">Detección de Imagen</a></li>
             </ul>
         </div>
     `;
@@ -30,5 +31,7 @@ document.addEventListener("DOMContentLoaded", () => {
         document.getElementById("nav-imagen")?.classList.add("active");
     } else if (paginaActual === "chatgpt.html") {
         document.getElementById("nav-chatgpt")?.classList.add("active");
+    } else if (paginaActual === "deteccion.html") {
+        document.getElementById("nav-deteccion")?.classList.add("active");
     }
 }); 
