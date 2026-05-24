@@ -114,6 +114,6 @@ document.getElementById('btnEnviar').addEventListener('click', async () => {
         }
 
     } catch (error) {
-        contenedor.innerHTML = `<p class="mensaje-estado" style="color: red;">Error: ${error.message}</p>`;
+        contenedor.textContent = `Error: ${error.message}`;
     }
 });

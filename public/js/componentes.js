@@ -15,6 +15,8 @@ document.addEventListener("DOMContentLoaded", () => {
                 <li><a href="imagen.html" id="nav-imagen">Análisis de Imagen</a></li>
                 <li><a href="chatgpt.html" id="nav-chatgpt">Chatgpt</a></li>
                 <li><a href="deteccion.html" id="nav-deteccion">Detección de Imagen</a></li>
+                <li><a href="resumen.html" id="nav-resumen">Resumen de Texto</a></li>
+                <li><a href="ocr.html" id="nav-ocr">Lectura de Texto (OCR)</a></li>
             </ul>
         </div>
     `;
@@ -33,5 +35,9 @@ document.addEventListener("DOMContentLoaded", () => {
         document.getElementById("nav-chatgpt")?.classList.add("active");
     } else if (paginaActual === "deteccion.html") {
         document.getElementById("nav-deteccion")?.classList.add("active");
+    } else if (paginaActual === "resumen.html") {
+        document.getElementById("nav-resumen")?.classList.add("active");
+    } else if (paginaActual === "ocr.html") {
+        document.getElementById("nav-ocr")?.classList.add("active");
     }
 }); 
