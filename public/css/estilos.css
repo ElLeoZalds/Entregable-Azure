@@ -197,3 +197,32 @@ pre,
     color: #64748b;
     margin: 0;
 }
+
+.checkbox-group {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    margin-top: 15px;
+}
+
+.checkbox-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 0.95rem;
+    color: #475569;
+    cursor: pointer;
+    user-select: none;
+    transition: var(--transition);
+}
+
+.checkbox-item:hover {
+    color: var(--accent-color);
+}
+
+.checkbox-item input[type="checkbox"] {
+    width: 16px;
+    height: 16px;
+    cursor: pointer;
+    accent-color: var(--accent-color);
+}

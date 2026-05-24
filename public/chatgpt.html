@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/estilos.css">
+</head>
+<body>
+        
+    <div class="contenido-pagina">
+        <h1>Módulo: ChatGPT - Azure AI Language</h1>
+
+        <div class="contenedor-principal">
+            <div class="columna-izquierda">
+                <label for="textoUsuario">Ingrese su pregunta para la IA</label><br><br>
+                <textarea id="textoUsuario" rows="6" placeholder="Escriba o pegue aquí su pregunta para la IA..."></textarea>
+            </div>
+
+            <div class="columna-derecha">
+                <label for="historial">Historial de Preguntas</label><br><br>
+                <select id="historial" size="10"></select>
+            </div>
+        </div>
+
+        <div class="seccion-boton">
+            <button id="btnEnviar">Enviar Pregunta</button>
+        </div>
+
+        <h3>Respuesta de la IA</h3>
+        <div id="resultado">
+            <p class="mensaje-estado">Esperando pregunta para analizar...</p>
+        </div>
+    </div>
+
+    <script src="./js/componentes.js"></script>
+    <script src="./js/chatgpt.js"></script>
+</body>
+</html>

@@ -14,6 +14,7 @@ app.get('/api/config', (req, res) => {
         openAiKey: process.env.AZURE_OPENAI_KEY,
         openAiEndpoint: process.env.AZURE_OPENAI_ENDPOINT,
         openAiDeployment: process.env.AZURE_OPENAI_DEPLOYMENT_NAME,
+        openAiVersion: process.env.AZURE_OPENAI_API_VERSION
     });
 });
 
