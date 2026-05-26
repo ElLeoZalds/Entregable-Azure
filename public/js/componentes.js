@@ -1,8 +1,8 @@
 document.addEventListener("DOMContentLoaded", () => {
-    const ruta = window.location.pathname;
-    const paginaActual = ruta.split("/").pop();
+  const ruta = window.location.pathname;
+  const paginaActual = ruta.split("/").pop();
 
-    const sidebarHTML = `
+  const sidebarHTML = `
         <div class="sidebar">
             <div class="brand">localhost:3000</div>
             <div class="sub-brand">Azure AI Services Workspace</div>
@@ -21,23 +21,23 @@ document.addEventListener("DOMContentLoaded", () => {
         </div>
     `;
 
-    document.body.insertAdjacentHTML("afterbegin", sidebarHTML);
+  document.body.insertAdjacentHTML("afterbegin", sidebarHTML);
 
-    if (paginaActual === "index.html" || paginaActual === "" || ruta === "/") {
-        document.getElementById("nav-inicio")?.classList.add("active");
-    } else if (paginaActual === "extraccion.html") {
-        document.getElementById("nav-extraccion")?.classList.add("active");
-    } else if (paginaActual === "sentimientos.html") {
-        document.getElementById("nav-sentimientos")?.classList.add("active");
-    } else if (paginaActual === "imagen.html") {
-        document.getElementById("nav-imagen")?.classList.add("active");
-    } else if (paginaActual === "chatgpt.html") {
-        document.getElementById("nav-chatgpt")?.classList.add("active");
-    } else if (paginaActual === "deteccion.html") {
-        document.getElementById("nav-deteccion")?.classList.add("active");
-    } else if (paginaActual === "resumen.html") {
-        document.getElementById("nav-resumen")?.classList.add("active");
-    } else if (paginaActual === "ocr.html") {
-        document.getElementById("nav-ocr")?.classList.add("active");
-    }
-}); 
+  if (paginaActual === "index.html" || paginaActual === "" || ruta === "/") {
+    document.getElementById("nav-inicio")?.classList.add("active");
+  } else if (paginaActual === "extraccion.html") {
+    document.getElementById("nav-extraccion")?.classList.add("active");
+  } else if (paginaActual === "sentimientos.html") {
+    document.getElementById("nav-sentimientos")?.classList.add("active");
+  } else if (paginaActual === "imagen.html") {
+    document.getElementById("nav-imagen")?.classList.add("active");
+  } else if (paginaActual === "chatgpt.html") {
+    document.getElementById("nav-chatgpt")?.classList.add("active");
+  } else if (paginaActual === "deteccion.html") {
+    document.getElementById("nav-deteccion")?.classList.add("active");
+  } else if (paginaActual === "resumen.html") {
+    document.getElementById("nav-resumen")?.classList.add("active");
+  } else if (paginaActual === "ocr.html") {
+    document.getElementById("nav-ocr")?.classList.add("active");
+  }
+});

@@ -1,46 +1,76 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Extracción - Azure AI Language</title>
-    <link rel="stylesheet" href="./css/estilos.css">
-</head>
-<body>
-
+    <link rel="stylesheet" href="./css/estilos.css" />
+  </head>
+  <body>
     <div class="contenido-pagina">
-        <h1>Módulo: Extracción - Azure AI Language</h1>
+      <h1>Módulo: Extracción - Azure AI Language</h1>
 
-        <div class="contenedor-principal">
-            <div class="columna-izquierda">
-                <label for="textoUsuario">Ingrese el texto a procesar</label><br><br>
-                <textarea id="textoUsuario" rows="6" placeholder="Escriba o pegue aquí el texto a analizar por la IA..."></textarea>
-            </div>
-
-            <div class="columna-derecha">
-                <label>Filtros de Datos Clave</label>
-                <div class="checkbox-group">
-                    <label class="checkbox-item"><input type="checkbox" value="DateTime" class="filtro-entidad"> DateTime</label>
-                    <label class="checkbox-item"><input type="checkbox" value="Organization" class="filtro-entidad"> Organization</label>
-                    <label class="checkbox-item"><input type="checkbox" value="PersonType" class="filtro-entidad"> PersonType</label>
-                    <label class="checkbox-item"><input type="checkbox" value="Location" class="filtro-entidad"> Location</label>
-                    <label class="checkbox-item"><input type="checkbox" value="Person" class="filtro-entidad"> Person</label>
-                    <label class="checkbox-item"><input type="checkbox" value="Quantity" class="filtro-entidad"> Quantity</label>
-                </div>
-            </div>
+      <div class="contenedor-principal">
+        <div class="columna-izquierda">
+          <label for="textoDelUsuario">Ingrese el texto a procesar</label
+          ><br /><br />
+          <textarea
+            id="textoDelUsuario"
+            rows="6"
+            placeholder="Escriba o pegue aquí el texto a analizar por la IA..."
+          ></textarea>
         </div>
 
-        <div class="seccion-boton">
-            <button id="btnEnviar">Analizar Frase</button>
+        <div class="columna-derecha">
+          <label>Filtros de Datos Clave</label>
+          <div class="checkbox-group">
+            <label class="checkbox-item"
+              ><input type="checkbox" value="DateTime" class="filtro-entidad" />
+              DateTime</label
+            >
+            <label class="checkbox-item"
+              ><input
+                type="checkbox"
+                value="Organization"
+                class="filtro-entidad"
+              />
+              Organization</label
+            >
+            <label class="checkbox-item"
+              ><input
+                type="checkbox"
+                value="PersonType"
+                class="filtro-entidad"
+              />
+              PersonType</label
+            >
+            <label class="checkbox-item"
+              ><input type="checkbox" value="Location" class="filtro-entidad" />
+              Location</label
+            >
+            <label class="checkbox-item"
+              ><input type="checkbox" value="Person" class="filtro-entidad" />
+              Person</label
+            >
+            <label class="checkbox-item"
+              ><input type="checkbox" value="Quantity" class="filtro-entidad" />
+              Quantity</label
+            >
+          </div>
         </div>
+      </div>
 
-        <h3>Resultado de la IA</h3>
-        <div id="resultado">
-            <p class="mensaje-estado">Esperando texto para analizar...</p>
-        </div>
+      <div class="seccion-boton">
+        <button id="btnEnviar">Analizar Frase</button>
+      </div>
+
+      <h3>Resultado de la IA</h3>
+      <div id="resultado">
+        <p class="mensaje-estado">Esperando texto para analizar...</p>
+      </div>
     </div>
 
     <script src="./js/componentes.js"></script>
     <script src="./js/extraccion.js"></script>
-</body>
+  </body>
 </html>

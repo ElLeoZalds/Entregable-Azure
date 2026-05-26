@@ -1,238 +1,238 @@
 /* Importar Fuente */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap");
 
 :root {
-    --bg-sidebar: #0f172a;
-    --bg-sidebar-hover: #1e293b;
-    --accent-color: #0078d4;
-    --text-light: #f8fafc;
-    --text-dark: #1e293b;
-    --border-radius: 10px;
-    --transition: all 0.25s ease-in-out;
+  --bg-sidebar: #0f172a;
+  --bg-sidebar-hover: #1e293b;
+  --accent-color: #0078d4;
+  --text-light: #f8fafc;
+  --text-dark: #1e293b;
+  --border-radius: 10px;
+  --transition: all 0.25s ease-in-out;
 }
 
 body {
-    font-family: 'Inter', sans-serif;
-    margin: 0;
-    padding: 0;
-    color: var(--text-dark);
-    display: flex;
-    min-height: 100vh;
-    background-color: #f1f5f9;
+  font-family: "Inter", sans-serif;
+  margin: 0;
+  padding: 0;
+  color: var(--text-dark);
+  display: flex;
+  min-height: 100vh;
+  background-color: #f1f5f9;
 }
 
 .sidebar {
-    width: 280px;
-    background-color: var(--bg-sidebar);
-    color: var(--text-light);
-    display: flex;
-    flex-direction: column;
-    padding: 25px 20px;
-    box-sizing: border-box;
-    box-shadow: 4px 0 10px rgba(0, 0, 0, 0.05);
+  width: 280px;
+  background-color: var(--bg-sidebar);
+  color: var(--text-light);
+  display: flex;
+  flex-direction: column;
+  padding: 25px 20px;
+  box-sizing: border-box;
+  box-shadow: 4px 0 10px rgba(0, 0, 0, 0.05);
 }
 
 .sidebar .brand {
-    font-size: 1.3rem;
-    font-weight: 700;
-    letter-spacing: 0.5px;
-    margin-bottom: 5px;
-    color: #fff;
+  font-size: 1.3rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  margin-bottom: 5px;
+  color: #fff;
 }
 
 .sidebar .sub-brand {
-    font-size: 0.85rem;
-    color: #94a3b8;
-    margin-bottom: 25px;
+  font-size: 0.85rem;
+  color: #94a3b8;
+  margin-bottom: 25px;
 }
 
 .sidebar hr {
-    width: 100%;
-    border: 0;
-    border-top: 1px solid #334155;
-    margin-bottom: 25px;
+  width: 100%;
+  border: 0;
+  border-top: 1px solid #334155;
+  margin-bottom: 25px;
 }
 
 .sidebar ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
+  list-style: none;
+  padding: 0;
+  margin: 0;
 }
 
 .sidebar li {
-    margin-bottom: 10px;
+  margin-bottom: 10px;
 }
 
 .sidebar a {
-    display: flex;
-    align-items: center;
-    color: #cbd5e1;
-    text-decoration: none;
-    font-weight: 500;
-    font-size: 0.95rem;
-    padding: 12px 16px;
-    border-radius: var(--border-radius);
-    transition: var(--transition);
+  display: flex;
+  align-items: center;
+  color: #cbd5e1;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 0.95rem;
+  padding: 12px 16px;
+  border-radius: var(--border-radius);
+  transition: var(--transition);
 }
 
 .sidebar a.active {
-    background-color: var(--accent-color);
-    color: #fff;
-    font-weight: 600;
-    box-shadow: 0 4px 12px rgba(0, 120, 212, 0.3);
+  background-color: var(--accent-color);
+  color: #fff;
+  font-weight: 600;
+  box-shadow: 0 4px 12px rgba(0, 120, 212, 0.3);
 }
 
 .sidebar a:not(.active):hover {
-    background-color: var(--bg-sidebar-hover);
-    color: #fff;
-    transform: translateX(4px);
+  background-color: var(--bg-sidebar-hover);
+  color: #fff;
+  transform: translateX(4px);
 }
 
 .contenido-pagina {
-    flex: 1;
-    padding: 40px;
-    box-sizing: border-box;
-    max-width: 1200px;
+  flex: 1;
+  padding: 40px;
+  box-sizing: border-box;
+  max-width: 1200px;
 }
 
 h1 {
-    font-size: 1.8rem;
-    font-weight: 700;
-    margin-top: 0;
-    margin-bottom: 30px;
-    color: #0f172a;
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin-top: 0;
+  margin-bottom: 30px;
+  color: #0f172a;
 }
 
 .contenedor-principal {
-    display: flex;
-    gap: 25px;
-    margin-top: 20px;
+  display: flex;
+  gap: 25px;
+  margin-top: 20px;
 }
 
 .columna-izquierda {
-    flex: 2;
-    background: #fff;
-    padding: 25px;
-    border-radius: var(--border-radius);
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+  flex: 2;
+  background: #fff;
+  padding: 25px;
+  border-radius: var(--border-radius);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
 }
 
 .columna-derecha {
-    flex: 1;
-    background: #fff;
-    padding: 25px;
-    border-radius: var(--border-radius);
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
-    border-top: 4px solid var(--accent-color);
+  flex: 1;
+  background: #fff;
+  padding: 25px;
+  border-radius: var(--border-radius);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+  border-top: 4px solid var(--accent-color);
 }
 
 label {
-    font-weight: 600;
-    font-size: 0.95rem;
-    color: #334155;
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: #334155;
 }
 
 textarea,
 input[type="text"] {
-    width: 100%;
-    box-sizing: border-box;
-    border: 1px solid #cbd5e1;
-    border-radius: 6px;
-    padding: 12px;
-    font-family: inherit;
-    font-size: 0.95rem;
-    transition: var(--transition);
+  width: 100%;
+  box-sizing: border-box;
+  border: 1px solid #cbd5e1;
+  border-radius: 6px;
+  padding: 12px;
+  font-family: inherit;
+  font-size: 0.95rem;
+  transition: var(--transition);
 }
 
 textarea:focus,
 input[type="text"]:focus {
-    outline: none;
-    border-color: var(--accent-color);
-    box-shadow: 0 0 0 3px rgba(0, 120, 212, 0.15);
+  outline: none;
+  border-color: var(--accent-color);
+  box-shadow: 0 0 0 3px rgba(0, 120, 212, 0.15);
 }
 
 .seccion-boton {
-    margin-top: 25px;
+  margin-top: 25px;
 }
 
 button {
-    padding: 12px 24px;
-    cursor: pointer;
-    font-weight: 600;
-    font-size: 0.95rem;
-    background-color: var(--accent-color);
-    color: #fff;
-    border: none;
-    border-radius: 6px;
-    box-shadow: 0 4px 6px rgba(0, 120, 212, 0.2);
-    transition: var(--transition);
+  padding: 12px 24px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 0.95rem;
+  background-color: var(--accent-color);
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  box-shadow: 0 4px 6px rgba(0, 120, 212, 0.2);
+  transition: var(--transition);
 }
 
 button:hover {
-    background-color: #005a9e;
-    transform: translateY(-1px);
-    box-shadow: 0 6px 12px rgba(0, 120, 212, 0.3);
+  background-color: #005a9e;
+  transform: translateY(-1px);
+  box-shadow: 0 6px 12px rgba(0, 120, 212, 0.3);
 }
 
 h3 {
-    font-size: 1.3rem;
-    margin-top: 35px;
-    color: #0f172a;
+  font-size: 1.3rem;
+  margin-top: 35px;
+  color: #0f172a;
 }
 
 pre,
 #resultado {
-    background-color: #fff;
-    padding: 20px;
-    margin-top: 10px;
-    margin-bottom: 0;
-    border-radius: var(--border-radius);
-    border-left: 4px solid #cbd5e1;
-    font-family: 'Courier New', Courier, monospace;
-    font-size: 0.95rem;
-    overflow-x: auto;
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.02);
+  background-color: #fff;
+  padding: 20px;
+  margin-top: 10px;
+  margin-bottom: 0;
+  border-radius: var(--border-radius);
+  border-left: 4px solid #cbd5e1;
+  font-family: "Courier New", Courier, monospace;
+  font-size: 0.95rem;
+  overflow-x: auto;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.02);
 }
 
 #resultado h3:first-child {
-    margin-top: 0;
+  margin-top: 0;
 }
 
 #resultado ul {
-    margin-bottom: 0;
+  margin-bottom: 0;
 }
 
 .mensaje-estado {
-    font-style: italic;
-    color: #64748b;
-    margin: 0;
+  font-style: italic;
+  color: #64748b;
+  margin: 0;
 }
 
 .checkbox-group {
-    display: flex;
-    flex-direction: column;
-    gap: 14px;
-    margin-top: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin-top: 15px;
 }
 
 .checkbox-item {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    font-size: 0.95rem;
-    color: #475569;
-    cursor: pointer;
-    user-select: none;
-    transition: var(--transition);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.95rem;
+  color: #475569;
+  cursor: pointer;
+  user-select: none;
+  transition: var(--transition);
 }
 
 .checkbox-item:hover {
-    color: var(--accent-color);
+  color: var(--accent-color);
 }
 
 .checkbox-item input[type="checkbox"] {
-    width: 16px;
-    height: 16px;
-    cursor: pointer;
-    accent-color: var(--accent-color);
+  width: 16px;
+  height: 16px;
+  cursor: pointer;
+  accent-color: var(--accent-color);
 }

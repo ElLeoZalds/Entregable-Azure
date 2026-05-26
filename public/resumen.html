@@ -1,34 +1,45 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Resumen de Texto - Azure AI</title>
-    <link rel="stylesheet" href="./css/estilos.css">
-</head>
-<body>
-    
+    <link rel="stylesheet" href="./css/estilos.css" />
+  </head>
+  <body>
     <div class="contenido-pagina">
-        <h1>Módulo: Resumen de Texto</h1>
+      <h1>Módulo: Resumen de Texto</h1>
 
-        <div class="contenedor-principal">
-            <div class="columna-izquierda" style="flex: 1;"> 
-                <label for="textoUsuario">Ingresa el texto largo a resumir:</label><br><br>
-                <textarea id="textoUsuario" rows="8" style="width: 100%; border-radius: 8px; border: 1px solid #ccc; padding: 10px; box-sizing: border-box;">La campaña contra los Países Bajos y Francia duró menos de seis semanas. Alemania atacó el Oeste el 10 de mayo de 1940. Inicialmente, los comandantes británicos y franceses habían pensado que las fuerzas alemanas atacarían a través del centro de Bélgica como lo habían hecho en la Primera Guerra Mundial y enviaron fuerzas rápidamente a la frontera franco-belga para detener el ataque alemán.</textarea>
-            </div>
+      <div class="contenedor-principal">
+        <div class="columna-izquierda" style="flex: 1">
+          <label for="textoDelUsuario">Ingresa el texto largo a resumir:</label
+          ><br /><br />
+          <textarea
+            id="textoDelUsuario"
+            rows="8"
+            placeholder="Pega o escribe tu texto largo aquí para comenzar a resumir..."
+            style="
+              width: 100%;
+              border-radius: 8px;
+              border: 1px solid #ccc;
+              padding: 10px;
+              box-sizing: border-box;
+            "
+          ></textarea>
         </div>
+      </div>
 
-        <div class="seccion-boton">
-            <button id="btnEnviar">Resumir Texto</button>
-        </div>
+      <div class="seccion-boton">
+        <button id="btnEnviar">Resumir Texto</button>
+      </div>
 
-        <h3>Resultado de la IA</h3>
-        <div id="resultado">
-            <p class="mensaje-estado">Esperando texto para analizar...</p>
-        </div>
+      <h3>Resultado de la IA</h3>
+      <div id="resultado">
+        <p class="mensaje-estado">Esperando texto para analizar...</p>
+      </div>
     </div>
 
     <script src="./js/componentes.js"></script>
     <script src="./js/resumen.js"></script>
-</body>
+  </body>
 </html>

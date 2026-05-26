@@ -1,39 +1,53 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="./css/estilos.css">
-</head>
-<body>
-    
+    <link rel="stylesheet" href="./css/estilos.css" />
+  </head>
+  <body>
     <div class="contenido-pagina">
-        <h1>Módulo: Detección de Objetos</h1>
+      <h1>Módulo: Detección de Objetos</h1>
 
-        <div class="contenedor-principal">
-            <div class="columna-izquierda" style="flex: 1;"> 
-                <label for="urlUsuario">Pega la URL de la imagen a analizar:</label><br><br>
-                <input type="text" id="urlUsuario" value="https://static.vecteezy.com/system/resources/previews/035/846/121/non_2x/man-job-entrepreneur-sitting-work-manager-office-modern-person-adult-smart-computer-desk-portrait-photo.jpg">
+      <div class="contenedor-principal">
+        <div class="columna-izquierda" style="flex: 1">
+          <label for="urlUsuario">Pega la URL de la imagen a analizar:</label
+          ><br /><br />
+          <input
+            type="text"
+            id="urlUsuario"
+            value="https://static.vecteezy.com/system/resources/previews/035/846/121/non_2x/man-job-entrepreneur-sitting-work-manager-office-modern-person-adult-smart-computer-desk-portrait-photo.jpg"
+          />
 
-                <br><br>
-                <div class="vista-previa">
-                    <img id="imgPreview" src="https://static.vecteezy.com/system/resources/previews/035/846/121/non_2x/man-job-entrepreneur-sitting-work-manager-office-modern-person-adult-smart-computer-desk-portrait-photo.jpg" alt="Vista previa" style="max-width: 100%; max-height: 100px; border-radius: 8px; border: 1px solid #ccc;">
-                </div>
-            </div>
+          <br /><br />
+          <div class="vista-previa">
+            <img
+              id="imgPreview"
+              src="https://static.vecteezy.com/system/resources/previews/035/846/121/non_2x/man-job-entrepreneur-sitting-work-manager-office-modern-person-adult-smart-computer-desk-portrait-photo.jpg"
+              alt="Vista previa"
+              style="
+                max-width: 100%;
+                max-height: 100px;
+                border-radius: 8px;
+                border: 1px solid #ccc;
+              "
+            />
+          </div>
         </div>
+      </div>
 
-        <div class="seccion-boton">
-            <button id="btnEnviar">Detectar Objetos</button>
-        </div>
+      <div class="seccion-boton">
+        <button id="btnEnviar">Detectar Objetos</button>
+      </div>
 
-        <h3>Resultado de la IA</h3>
-        <div id="resultado">
-            <p class="mensaje-estado">Esperando imagen para analizar...</p>
-        </div>
+      <h3>Resultado de la IA</h3>
+      <div id="resultado">
+        <p class="mensaje-estado">Esperando imagen para analizar...</p>
+      </div>
     </div>
 
     <script src="./js/componentes.js"></script>
     <script src="./js/deteccion.js"></script>
-</body>
+  </body>
 </html>

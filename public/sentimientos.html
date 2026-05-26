@@ -1,34 +1,38 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Análisis de Sentimientos - Azure AI</title>
-    <link rel="stylesheet" href="./css/estilos.css">
-</head>
-<body>
-
+    <link rel="stylesheet" href="./css/estilos.css" />
+  </head>
+  <body>
     <div class="contenido-pagina">
-        <h1>Módulo: Análisis de Sentimientos</h1>
+      <h1>Módulo: Análisis de Sentimientos</h1>
 
-        <div class="contenedor-principal">
-            <div class="columna-izquierda" style="flex: 1;">
-                <label for="textoUsuario">Escribe la frase que deseas analizar:</label><br><br>
-                <input type="text" id="textoUsuario" placeholder="Escribe algo emotivo o crítico...">
-            </div>
+      <div class="contenedor-principal">
+        <div class="columna-izquierda" style="flex: 1">
+          <label for="textoDelUsuario">Escribe la frase que deseas analizar:</label
+          ><br /><br />
+          <input
+            type="text"
+            id="textoDelUsuario"
+            placeholder="Escribe algo emotivo o crítico..."
+          />
         </div>
+      </div>
 
-        <div class="seccion-boton">
-            <button id="btnEnviar">Analizar Frase</button>
-        </div>
+      <div class="seccion-boton">
+        <button id="btnEnviar">Analizar Frase</button>
+      </div>
 
-        <h3>Resultado de la IA</h3>
-        <div id="resultado">
-            <p class="mensaje-estado">Esperando texto para analizar...</p>
-        </div>
+      <h3>Resultado de la IA</h3>
+      <div id="resultado">
+        <p class="mensaje-estado">Esperando texto para analizar...</p>
+      </div>
     </div>
 
     <script src="./js/componentes.js"></script>
     <script src="./js/sentimientos.js"></script>
-</body>
+  </body>
 </html>
