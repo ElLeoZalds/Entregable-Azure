@@ -32,7 +32,7 @@ document.addEventListener("DOMContentLoaded", () => {
             <button id="btn-cerrar-chat">X</button>
           </div>
           <div id="chat-mensajes" class="chat-mensajes">
-            <p class="mensaje-sistema">Hola Jhon, soy tu modelo entrenado en Azure AI. ¿En qué te puedo ayudar hoy?</p>
+            <p class="mensaje-sistema">Hola!, soy tu modelo entrenado en Azure AI. ¿En qué te puedo ayudar hoy?</p>
           </div>
           <div class="chat-input-area">
             <input type="text" id="chat-input-texto" placeholder="Escribe un mensaje...">

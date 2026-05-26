@@ -55,22 +55,33 @@ document.getElementById("btnEnviar").addEventListener("click", async () => {
     // Procesar la respuesta de Azure
     const data = await response.json();
 
-    // Generar el formato de salida para mostrar los resultados de confianza
-    let resultadoHTML = "";
-    data.results.documents.forEach((document) => {
-      resultadoHTML += `Documento # ${document.id}\n`;
-      resultadoHTML += `Texto analizado: "${textoDelUsuario}"\n\n`;
+    // Estructurar la lista de resultados para mostrar en el DOM
+    let resultadoHTML = "<h3>Análisis de Sentimiento:</h3>";
 
-      // Extraer las puntuaciones (scores) de sentimiento devueltas por la IA
+    data.results.documents.forEach((document) => {
+      // Extraer y formatear las puntuaciones (scores) a porcentajes
       const scores = document.confidenceScores;
-      resultadoHTML += `Puntuaciones de confianza:\n`;
-      resultadoHTML += `- positivo: ${scores.positive}\n`;
-      resultadoHTML += `- negativo: ${scores.negative}\n`;
-      resultadoHTML += `- neutral: ${scores.neutral}\n`;
+      const pos = (scores.positive * 100).toFixed(2);
+      const neg = (scores.negative * 100).toFixed(2);
+      const neu = (scores.neutral * 100).toFixed(2);
+
+      resultadoHTML += `
+          <div style="margin-bottom: 15px; padding-bottom: 10px; border-bottom: 1px solid #eee;">
+              <strong>Documento # ${document.id}</strong><br>
+              <small style="color: #666; display: block; margin-bottom: 5px;">
+                  Texto analizado: "${textoDelUsuario}"
+              </small>
+              
+              <ul style="margin-top: 5px; padding-left: 20px;">
+                  <li><strong>Positivo:</strong> ${pos}%</li>
+                  <li><strong>Negativo:</strong> ${neg}%</li>
+                  <li><strong>Neutral:</strong> ${neu}%</li>
+              </ul>
+          </div>`;
     });
 
     // Renderizar el resultado final en el contenedor de la interfaz
-    contenedor.textContent = resultadoHTML;
+    contenedor.innerHTML = resultadoHTML;
   } catch (error) {
     contenedor.textContent = `Error: ${error.message}`;
   }

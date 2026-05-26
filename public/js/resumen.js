@@ -90,13 +90,22 @@ document.getElementById("btnEnviar").addEventListener("click", async () => {
       return;
     }
 
-    // Estructurar el HTML para mostrar las frases extraídas como resumen
-    let resultadoHTML = "<h3>Resumen Generado:</h3><ul>";
+    // Estructurar la lista de resultados para mostrar en el DOM
+    let resultadoHTML = "<h3>Resumen Generado:</h3><ul style='padding-left: 20px;'>";
+
     frasesResumen.forEach((frase) => {
-      resultadoHTML += `<li>${frase.text}</li>`;
+      // Extraemos el score si existe, ideal para mostrar la relevancia de la frase
+      const relevancia = frase.score ? ` — <small style="color: #666;">Relevancia: ${(frase.score * 100).toFixed(2)}%</small>` : "";
+
+      resultadoHTML += `
+                <li style="margin-bottom: 8px; line-height: 1.4;">
+                    <span>${frase.text}</span>${relevancia}
+                </li>`;
     });
+
     resultadoHTML += "</ul>";
 
+    // Mostrar los datos extraídos en el contenedor de resultados
     contenedor.innerHTML = resultadoHTML;
   } catch (error) {
     contenedor.textContent = `Error: ${error.message}`;

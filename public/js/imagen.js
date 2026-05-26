@@ -57,14 +57,29 @@ document.getElementById("btnEnviar").addEventListener("click", async () => {
       2,
     );
 
-    // Estructurar el texto de salida con la información principal
-    let resultadoHTML = "";
-    resultadoHTML += `Descripción: ${data.description.captions[0].text}\n`;
-    resultadoHTML += `Etiquetas: ${data.description.tags.join(", ")}\n`;
-    resultadoHTML += `Confianza: ${confianza} %`;
+    // Estructurar la lista de resultados para mostrar en el DOM
+    let resultadoHTML = "<h3>Descripción de la Imagen:</h3>";
+
+    // Formatear la confianza (por si acaso no venía con decimales fijos)
+    const confianzaFormateada = parseFloat(confianza).toFixed(2);
+    const descripcion = data.description.captions[0]?.text || "No disponible";
+    const etiquetas = data.description.tags.join(", ");
+
+    resultadoHTML += `
+        <div style="line-height: 1.6;">
+            <p style="margin-bottom: 8px;">
+                <strong>Descripción:</strong> "${descripcion}"
+            </p>
+            <p style="margin-bottom: 8px;">
+                <strong>Confianza:</strong> ${confianzaFormateada}%
+            </p>
+            <small style="color: #666; display: block; margin-top: 10px;">
+                <strong>Etiquetas:</strong> ${etiquetas}
+            </small>
+        </div>`;
 
     // Mostrar los datos extraídos en el contenedor de resultados
-    contenedor.textContent = resultadoHTML;
+    contenedor.innerHTML = resultadoHTML;
   } catch (error) {
     contenedor.textContent = `Error: ${error.message}`;
   }

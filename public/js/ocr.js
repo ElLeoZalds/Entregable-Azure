@@ -77,17 +77,31 @@ document.getElementById("btnEnviar").addEventListener("click", async () => {
       return;
     }
 
-    let resultadoHTML =
-      "<h3>Texto Extraído:</h3><div style='background: #f9f9f9; padding: 15px; border-radius: 8px; border: 1px solid #eee; text-align: left; line-height: 1.6;'>";
+    // Estructurar la lista de resultados para mostrar en el DOM
+    let resultadoHTML = "<h3>Texto Extraído (OCR):</h3>";
 
     // Iterar sobre las páginas y líneas detectadas por el motor de OCR
-    readResults.forEach((page) => {
+    readResults.forEach((page, index) => {
+      // Encabezado sutil para separar por páginas si hay más de una
+      resultadoHTML += `
+        <div style="margin-bottom: 5px;">
+            <small style="color: #666; font-weight: bold;">Página ${index + 1}</small>
+        </div>
+        <div style="background: #f9f9f9; padding: 15px; border-radius: 8px; border: 1px solid #eee; text-align: left; line-height: 1.6; margin-bottom: 20px;">`;
+
       page.lines.forEach((line) => {
-        resultadoHTML += `<p style='margin: 0 0 8px 0;'>${line.text}</p>`;
+        // Opcional: Extraer confianza de la línea si el motor la incluye (ej. Azure/AWS OCR suele traerla)
+        const confianzaLinea = line.confidence
+          ? ` <small style="color: #999; font-size: 0.85em;">(${(line.confidence * 100).toFixed(0)}%)</small>`
+          : "";
+
+        resultadoHTML += `<p style="margin: 0 0 8px 0;">${line.text}${confianzaLinea}</p>`;
       });
+
+      resultadoHTML += "</div>";
     });
 
-    resultadoHTML += "</div>";
+    // Renderizar el resultado en el contenedor de la interfaz
     contenedor.innerHTML = resultadoHTML;
   } catch (error) {
     contenedor.textContent = `Error: ${error.message}`;
